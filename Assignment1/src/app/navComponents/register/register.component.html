@@ -1,0 +1,56 @@
+<div class="register-container">
+    <!-- Image Section -->
+    <div class="register-image-container">
+      <img src="assets/register-image.jpg" alt="Register Image">
+      <div class="image-overlay">
+        <h1>Join Us Today!</h1>
+        <p>Create your account to manage your finances efficiently.</p>
+      </div>
+    </div>
+  
+    <!-- Form Section -->
+    <div class="register-form-container">
+      <div class="register-form-wrapper">
+        <div class="register-header">
+          <h2>Create Account</h2>
+          <p>Start tracking your financial goals with ease.</p>
+        </div>
+  
+        <form class="register-form" (ngSubmit)="OnSave()" [formGroup]="User">
+          <div class="form-field">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter your full name" formControlName="fullname">
+          </div>
+          <div *ngif=""User.fullname?.errors?.required && User.fullname?.touched>
+            Enter the username
+          </div><br/><br/>
+  
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required formControlName="email">
+          </div>
+          <div>
+            @if(User.controls['username'].errors?.['required']){
+              <span>This is required field</span>
+            }
+          </div>
+  
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create a password" required formControlName="password">
+          </div>
+  
+          <div class="form-field">
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" id="confirmpassword" placeholder="Confirm your password" required formControlName="confirmpassword">
+          </div>
+  
+          <button type="submit" class="register-button">Register</button>
+        </form>
+  
+        <div class="login-link">
+          Already have an account? <a href="/login">Login here</a>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -3,6 +3,7 @@ import { HomeComponent } from './navComponents/home/home.component';
 import { AboutComponent } from './navComponents/about/about.component';
 import { ContactComponent } from './navComponents/contact/contact.component';
 import { LoginComponent } from './navComponents/login/login.component';
+import { RegisterComponent } from './navComponents/register/register.component';
 
 export const routes: Routes = [
     {
@@ -24,6 +25,10 @@ export const routes: Routes = [
     {
         path: 'logout',
         component: HomeComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     },
     {
         path: '**',
